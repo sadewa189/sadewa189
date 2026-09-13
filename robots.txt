@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sadewa189.github.io/sadewa189/sitemap.xml
