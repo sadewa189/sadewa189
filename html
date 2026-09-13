@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SADEWA189 Official</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+    width:100%;
+    min-height:100%;
+}
+
+body{
+    background:#080808;
+    color:white;
+    font-family:Georgia, "Times New Roman", serif;
+    overflow-x:hidden;
+}
+
+/* BACKGROUND */
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+        linear-gradient(
+            rgba(0,0,0,.45),
+            rgba(0,0,0,.75)
+        ),
+        url("background.jpg") center center / cover no-repeat;
+    filter:blur(1px);
+    transform:scale(1.03);
+    z-index:-2;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.12);
+    z-index:-1;
+}
+
+.wrapper{
+    width:100%;
+    max-width:680px;
+    margin:auto;
+    padding:18px 15px 30px;
+}
+
+/* JUDUL */
+.title{
+    text-align:center;
+    color:#d7ad42;
+    font-size:clamp(16px,4vw,24px);
+    letter-spacing:5px;
+    line-height:1.5;
+    text-transform:uppercase;
+    text-shadow:0 0 8px rgba(218,170,50,.25);
+}
+
+.line{
+    width:94%;
+    height:1px;
+    margin:18px auto 42px;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        #80631f,
+        #d9ae43,
+        #80631f,
+        transparent
+    );
+}
+
+/* DOT */
+.dots{
+    display:flex;
+    justify-content:space-between;
+    margin:0 75px -5px;
+    position:relative;
+    z-index:2;
+}
+
+.dots span{
+    width:10px;
+    height:10px;
+    background:#eee;
+    border-radius:50%;
+    box-shadow:0 0 8px #fff;
+}
+
+/* BANNER */
+.banner{
+    position:relative;
+    width:100%;
+    aspect-ratio:864 / 1536;
+
+    border:2px solid #997426;
+    border-radius:20px;
+    overflow:hidden;
+
+    box-shadow:
+        0 5px 25px rgba(0,0,0,.7),
+        0 0 10px rgba(180,140,35,.15);
+}
+
+.banner img{
+    display:block;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+/* LOGO DI BANNER */
+.banner-logo{
+    position:absolute;
+    width:72%;
+    left:50%;
+    bottom:30px;
+    transform:translateX(-50%);
+    filter:drop-shadow(0 4px 4px #000);
+}
+
+/* MENU */
+.menu-area{
+    margin-top:78px;
+    display:flex;
+    flex-direction:column;
+    gap:22px;
+}
+
+.menu{
+    width:100%;
+    min-height:96px;
+
+    display:flex;
+    align-items:center;
+
+    padding:11px 15px;
+
+    border:2px solid #765b1e;
+    border-radius:20px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(18,18,20,.97),
+            rgba(31,29,29,.94)
+        );
+
+    text-decoration:none;
+    color:white;
+
+    box-shadow:
+        0 5px 12px rgba(0,0,0,.55),
+        inset 0 0 15px rgba(218,170,50,.05);
+
+    transition:.2s;
+}
+
+.menu:hover{
+    transform:translateY(-2px);
+    border-color:#b9983d;
+}
+
+.menu:active{
+    transform:scale(.98);
+}
+
+/* ICON */
+.icon{
+    width:65px;
+    height:65px;
+    flex-shrink:0;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    margin-right:17px;
+
+    border-radius:50%;
+    border:2px solid #73591e;
+
+    background:#191919;
+    overflow:hidden;
+}
+
+.icon img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+}
+
+/* TEXT */
+.text{
+    flex:1;
+    text-align:left;
+}
+
+.text h2{
+    color:#dfb748;
+    font-size:clamp(21px,5vw,29px);
+    letter-spacing:2px;
+    line-height:1;
+}
+
+.text p{
+    margin-top:7px;
+    color:#ad9b70;
+
+    font-family:Arial,sans-serif;
+    font-size:14px;
+    letter-spacing:1px;
+    line-height:1.25;
+}
+
+/* BUTTON */
+.btn{
+    width:195px;
+    padding:19px 10px;
+
+    border:2px solid #a5161c;
+    border-radius:16px;
+
+    font-family:Arial,sans-serif;
+    font-size:19px;
+    font-weight:bold;
+    letter-spacing:2px;
+
+    text-align:center;
+}
+
+/* DAFTAR */
+.register{
+    border-color:#a88730;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(31,25,20,.97),
+            rgba(147,51,29,.90)
+        );
+}
+
+.register .btn{
+    border:0;
+
+    background:
+        linear-gradient(
+            90deg,
+            #c77d3b,
+            #df211d
+        );
+}
+
+/* PROMO */
+.promo{
+    border-color:#c0a044;
+}
+
+/* FOOTER */
+footer{
+    margin-top:70px;
+
+    text-align:center;
+
+    color:#ddd;
+
+    font-family:Arial,sans-serif;
+    font-size:13px;
+    letter-spacing:3px;
+    line-height:1.7;
+}
+
+/* HP */
+@media(max-width:520px){
+
+    .wrapper{
+        padding:15px 10px 25px;
+    }
+
+    .title{
+        font-size:15px;
+        letter-spacing:4px;
+    }
+
+    .line{
+        margin-bottom:40px;
+    }
+
+    .dots{
+        margin-left:65px;
+        margin-right:65px;
+    }
+
+    .banner{
+        border-radius:17px;
+    }
+
+    .banner-logo{
+        bottom:22px;
+        width:75%;
+    }
+
+    .menu-area{
+        margin-top:78px;
+        gap:18px;
+    }
+
+    .menu{
+        min-height:91px;
+        padding:9px;
+        border-radius:17px;
+    }
+
+    .icon{
+        width:57px;
+        height:57px;
+        margin-right:11px;
+    }
+
+    .text h2{
+        font-size:21px;
+        letter-spacing:1px;
+    }
+
+    .text p{
+        font-size:11px;
+        margin-top:5px;
+    }
+
+    .btn{
+        width:145px;
+        padding:17px 5px;
+        font-size:16px;
+        border-radius:14px;
+    }
+
+    footer{
+        margin-top:60px;
+        font-size:10px;
+        letter-spacing:2px;
+    }
+}
+
+/* HP KECIL */
+@media(max-width:380px){
+
+    .icon{
+        width:49px;
+        height:49px;
+    }
+
+    .text h2{
+        font-size:18px;
+    }
+
+    .text p{
+        font-size:9px;
+    }
+
+    .btn{
+        width:115px;
+        padding:15px 3px;
+        font-size:14px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="wrapper">
+
+    <!-- HEADER -->
+    <div class="title">
+        AKSES LOGIN SADEWA189<br>
+        OFFICIAL RESMI NO.1 SE-ASIA
+    </div>
+
+    <div class="line"></div>
+
+    <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+
+    <!-- BANNER -->
+    <div class="banner">
+
+        <img src="banner.jpg" alt="SADEWA189">
+
+        <!-- LOGO -->
+        <img
+            class="banner-logo"
+            src="logo.png"
+            alt="SADEWA189"
+        >
+
+    </div>
+
+
+    <!-- MENU -->
+    <div class="menu-area">
+
+        <!-- LOGIN -->
+        <a
+            class="menu"
+            href="https://msha.ke/sadewa189"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+
+            <div class="icon">
+                <img src="logo.png" alt="Logo">
+            </div>
+
+            <div class="text">
+                <h2>LOGIN</h2>
+                <p>LOGIN NOW!</p>
+            </div>
+
+            <div class="btn">
+                MASUK
+            </div>
+
+        </a>
+
+
+        <!-- DAFTAR -->
+        <a
+            class="menu register"
+            href="https://msha.ke/sadewa189"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+
+            <div class="icon">
+                <img src="logo.png" alt="Logo">
+            </div>
+
+            <div class="text">
+                <h2>DAFTAR</h2>
+                <p>
+                    BONUS 100% NEW<br>
+                    MEMBER
+                </p>
+            </div>
+
+            <div class="btn">
+                GABUNG
+            </div>
+
+        </a>
+
+
+        <!-- PROMO EVENT -->
+        <a
+            class="menu promo"
+            href="https://msha.ke/sadewa189"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+
+            <div class="icon">
+                <span style="font-size:30px;">📣</span>
+            </div>
+
+            <div class="text">
+                <h2>PROMO EVENT</h2>
+                <p>ALTERNATIVE</p>
+            </div>
+
+            <div class="btn">
+                AKSES
+            </div>
+
+        </a>
+
+    </div>
+
+
+    <!-- FOOTER -->
+    <footer>
+        © 2026 COPYRIGHT SADEWA189 BY SEO<br>
+        KAYEYEGG
+    </footer>
+
+</div>
+
+</body>
+</html>
